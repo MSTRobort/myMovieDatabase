@@ -1,0 +1,20 @@
+/* -------------------- */
+/* Movie Result Styling */
+/* -------------------- */
+
+.resultContainer {
+    background: #E0E0E0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 60px 100px;
+}
+
+span.info {
+    font-weight: bold;
+}
+
+.poster img {
+    border: 5px solid #00AEA4;
+}

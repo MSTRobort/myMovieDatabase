@@ -1,18 +1,50 @@
-/* .App {
-  text-align: center;
-} */
+/* -------------------- */
+/* Search Input Styling */
+/* -------------------- */
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.searchBar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-/* 
-.App-link {
-  color: #61dafb;
-} */
+}
+
+form {
+  margin: 70px 0;
+}
+
+form i {
+  color: #FFF;
+  font-size: 2rem;
+  padding: 3px 20px 0 0;
+}
+
+input {
+  font-family: 'Lexend', sans-serif;
+  border: none;
+  border-bottom: 2px solid #00AEA4;
+  width: 500px;
+  padding: 10px;
+}
+
+form button {
+  background: #00AEA4;
+  border: none;
+  color: #FFF;
+  padding: 0 20px;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+}
+
+form button:hover {
+  background: #00706B;
+}
+
+
+/* --------------------- */
+/* Search Result Styling */
+/* --------------------- */
+
+.movieResult {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+}
