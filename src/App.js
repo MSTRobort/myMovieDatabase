@@ -1,6 +1,7 @@
 import './App.css';
 import axios from "axios";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import SearchResult from './SearchResult.js';
 
 
 function App() {
@@ -13,11 +14,13 @@ function App() {
     e.preventDefault();
     getMovie(userInput);
     setUserInput('');
-  }
+    const showSearch = document.querySelector('.movieResult');
+    showSearch.classList.remove('hide');
+  };
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
-  }
+  };
 
   // API request to get movie data
   const key = '7306c825';
@@ -28,65 +31,58 @@ function App() {
       dataResponse: 'json',
       params: {
         apiKey: key,
+        format: 'json',
         t: userInput
       }
-    }).then((res) => {
-      setMovie(res.data);
+    })
+    .then( (res) => {
+      const apiData = res.data
+      setMovie(apiData);
     });
-  }
+  };
 
   // JSX return to mount things on our page
   return (
     <div className="App">
-      <header>
-        <h1>My Movie Database App🤩</h1>
-      </header>
+      <div className="wrapper">
+        <header>
+          <h1><i className="fas fa-film" aria-hidden="true"></i> My Movie Database</h1>
+        </header>
 
-      <form action="submit" className="searchBar">
-        <label htmlFor="userMovie">Search movies you like </label>
-        <input 
-          type = 'text'
-          id="userMovie" 
-          placeholder = 'Movie Title ie. "Edward Scissorhands"'
-          onChange={handleChange}
-          value={userInput}
-        />
-        <button onClick={handleClick}>Search movie</button>
-      </form>
+        <form action="submit" className="searchBar">
+          <i className="fas fa-search" aria-hidden="true"></i>
+          <label htmlFor="userMovie" className="sr-only">Search a movie of your choice</label>
+          <input 
+            type = 'text'
+            id="userMovie" 
+            placeholder = 'Movie Title ie. "Edward Scissorhands"'
+            onChange={handleChange}
+            value={userInput}
+          />
+          <button onClick={handleClick}>Search</button>
+        </form>
 
-      <div className="movieResult">
-        {
-          <ul>
-            <div className="poster">
-              <img src={movie.Poster} alt={movie.Title}/>
-            </div>
-            <li>
-              <h3>Title</h3>
-              <p>{movie.Title}</p>
-            </li>
-            <li>
-              <h3>Release Date:</h3>
-              <p>{movie.Released}</p>
-            </li>
-            <li>
-              <h3>Rated:</h3>
-              <p>{movie.Rated}</p>
-            </li>
-            <li>
-              <h3>Genre:</h3>
-              <p>{movie.Genre}</p>
-            </li>
-            <li>
-              <h3>Plot:</h3>
-              <p>{movie.Plot}</p>
-            </li>
-            <li>
-              <h3>Actors:</h3>
-              <p>{movie.Actors}</p>
-            </li>
-          </ul>
-        }
+        <div className="movieResult hide">
+          {
+            <SearchResult
+              poster={movie.Poster}
+              title={movie.Title}
+              released={movie.Released}
+              runtime={movie.Runtime}
+              rated={movie.Rated}
+              genre={movie.Genre}
+              plot={movie.Plot}
+              actors={movie.Actors}
+            />
+          }
+        </div>
       </div>
+
+      <footer>
+        <p>Created by</p>
+        <p>Mackenzie Howey • Si-Jia Mao • Toria Walker-McHayle</p>
+        <p>at <a href="https://junocollege.com/">Juno College of Technology</a></p>
+      </footer>
     </div>
   );
 };
