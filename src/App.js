@@ -60,7 +60,7 @@ function App() {
   const key = "7306c825";
   const getMovie = (userInput) => {
     axios({
-      url: "http://www.omdbapi.com/",
+      url: "https://www.omdbapi.com/",
       method: "GET",
       dataResponse: "json",
       params: {
