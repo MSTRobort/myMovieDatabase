@@ -34,7 +34,8 @@ form button {
   transition-duration: 0.3s;
 }
 
-form button:hover {
+form button:hover,
+form button:focus {
   background: #00706B;
 }
 
@@ -46,5 +47,28 @@ form button:hover {
 .movieResult {
   max-width: 1300px;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
+}
+
+.notice {
+  background: #151515;
+  border: 2px solid #000;
+  border-radius: 15px;
+  color: #FFF;
+  text-align: center;
+  margin: 100px auto;
+  padding: 20px;
+  width: 45%;
+}
+
+.afterNotice {
+  margin-top: 150px;
+}
+
+/* -------------------------- */
+/* Plan to Watch List Styling */
+/* -------------------------- */
+
+.toWatchList {
+  margin-top: 50px;
 }

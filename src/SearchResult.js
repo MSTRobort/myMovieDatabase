@@ -1,9 +1,12 @@
 import './searchResult.css';
 
 function SearchResult(props) {
-    return (
+    return(
         <>
             <div className="resultContainer">
+                <button className="addButton" onClick={props.addMovie}>
+                    Add to List <i className="fas fa-plus-circle" aria-hidden="true"></i>
+                </button>
                 <div className="poster">
                     <img src={props.poster} alt={props.title}/>
                 </div>

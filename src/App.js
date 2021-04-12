@@ -6,21 +6,56 @@ import SearchResult from './SearchResult.js';
 
 function App() {
   // Piece of states to store data from API and user input
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState([]);
   const [userInput, setUserInput] = useState('');
+  const [list, setList] = useState([]);
+
+  // Storing some elements for easy access
+  const showSearch = document.querySelector('.movieResult');
+  const addedNotice = document.querySelector('.afterNotice');
 
   // Function for event handlers
   const handleClick = (e) => {
     e.preventDefault();
+    // Make API call when search is submitted
     getMovie(userInput);
+    // Empty search bar after submit/click
     setUserInput('');
-    const showSearch = document.querySelector('.movieResult');
+    // Remove hide class from movieResult to show data from API
     showSearch.classList.remove('hide');
+    // Add hide class to addedNotice when new search is submitted
+    addedNotice.classList.add('hide');
   };
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
   };
+
+  const addMovie = (movie) => {
+    // Makes the movie data from the lastest API call available
+    getMovie();
+    // Push movie data to be stored in list array
+    list.push(movie);
+    // Store beforeNotice element into a variable for easy access
+    const defaultNotice = document.querySelector('.beforeNotice')
+    // Add hide class to beforeNotice
+    defaultNotice.classList.add('hide');
+    // Applying hide class as necessary to other elements
+    showSearch.classList.add('hide');
+    addedNotice.classList.remove('hide');
+  }
+
+  const removeMovie = (listedMovie) => {
+    // Create new array from the list state
+    const oldMovies = [...list]
+    // Compare each filteredMovie value against the value of listedMovie
+    // If filteredMovie !== listedMovie, it will be returned to updatedList array
+    // If filteredMovie == listedMovie, it will NOT be returned to updatedList array
+    const updatedList = oldMovies.filter(filteredMovie => filteredMovie !== listedMovie);
+    // Set the returned filter array from updatedList to our original list state
+    setList(updatedList);
+    
+  }
 
   // API request to get movie data
   const key = '7306c825';
@@ -31,11 +66,10 @@ function App() {
       dataResponse: 'json',
       params: {
         apiKey: key,
-        format: 'json',
         t: userInput
       }
     })
-    .then( (res) => {
+    .then((res) => {
       const apiData = res.data
       setMovie(apiData);
     });
@@ -62,9 +96,14 @@ function App() {
           <button onClick={handleClick}>Search</button>
         </form>
 
+        <p className="notice afterNotice hide">
+          Movie has been added to your list!
+        </p>
+
         <div className="movieResult hide">
           {
             <SearchResult
+              addMovie={() => addMovie(movie)}
               poster={movie.Poster}
               title={movie.Title}
               released={movie.Released}
@@ -76,6 +115,26 @@ function App() {
             />
           }
         </div>
+      </div>
+
+      <h2>My Plan to Watch List</h2>
+      <p className="notice beforeNotice">
+        Search a movie to add to the list!
+      </p>
+
+      <div className="toWatchList">
+        <ul className="movieList">
+          {
+            list.map((newMovie) => {
+              return(
+                <li className="movieCard">
+                  <img src={newMovie.Poster} alt={newMovie.Title}/>
+                  <button onClick={() => removeMovie(newMovie)}>Delete</button>
+                </li>
+              )
+            })
+          }
+        </ul>
       </div>
 
       <footer>
