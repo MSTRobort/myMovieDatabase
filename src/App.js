@@ -54,7 +54,6 @@ function App() {
     const updatedList = oldMovies.filter(filteredMovie => filteredMovie !== listedMovie);
     // Set the returned filter array from updatedList to our original list state
     setList(updatedList);
-    
   }
 
   // API request to get movie data
