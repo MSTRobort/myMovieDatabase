@@ -1,8 +1,8 @@
-import './App.css';
+import "./App.css";
 import axios from "axios";
-import { useState } from 'react';
-import SearchResult from './SearchResult.js';
-
+import { useState } from "react";
+import SearchResult from "./SearchResult.js";
+import ErrorAlert from "./ErrorAlert.js";
 
 function App() {
   // Piece of states to store data from API and user input
@@ -57,38 +57,55 @@ function App() {
   }
 
   // API request to get movie data
-  const key = '7306c825';
+  const key = "7306c825";
   const getMovie = (userInput) => {
     axios({
-      url:'http://www.omdbapi.com/',
-      method: 'GET',
-      dataResponse: 'json',
+      url: "http://www.omdbapi.com/",
+      method: "GET",
+      dataResponse: "json",
       params: {
         apiKey: key,
-        t: userInput
-      }
+        format: "json",
+        t: userInput,
+      },
     })
-    .then((res) => {
-      const apiData = res.data
-      setMovie(apiData);
-    });
+      .then((res) => {
+        const apiData = res.data;
+        const errorAlert = document.querySelector(".errorPopUp");
+        setMovie(apiData);
+        if (apiData.Response === "False") {
+          ErrorAlert();
+          errorAlert.classList.remove("hide");
+        } else {
+          errorAlert.classList.add("hide");
+        }
+      })
+      .catch((error) => {
+        alert("Oops! Something went wrong.");
+      });
   };
+
+  console.log(movie);
 
   // JSX return to mount things on our page
   return (
-    <div className="App">
-      <div className="wrapper">
+    <div className='App'>
+      <div className='wrapper'>
         <header>
-          <h1><i className="fas fa-film" aria-hidden="true"></i> My Movie Database</h1>
+          <h1>
+            <i className='fas fa-film' aria-hidden='true'></i> My Movie Database
+          </h1>
         </header>
 
-        <form action="submit" className="searchBar">
-          <i className="fas fa-search" aria-hidden="true"></i>
-          <label htmlFor="userMovie" className="sr-only">Search a movie of your choice</label>
-          <input 
-            type = 'text'
-            id="userMovie" 
-            placeholder = 'Movie Title ie. "Edward Scissorhands"'
+        <form action='submit' className='searchBar'>
+          <i className='fas fa-search' aria-hidden='true'></i>
+          <label htmlFor='userMovie' className='sr-only'>
+            Search a movie of your choice
+          </label>
+          <input
+            type='text'
+            id='userMovie'
+            placeholder='Movie Title ie. "Edward Scissorhands"'
             onChange={handleChange}
             value={userInput}
           />
@@ -139,10 +156,12 @@ function App() {
       <footer>
         <p>Created by</p>
         <p>Mackenzie Howey • Si-Jia Mao • Toria Walker-McHayle</p>
-        <p>at <a href="https://junocollege.com/">Juno College of Technology</a></p>
+        <p>
+          at <a href='https://junocollege.com/'>Juno College of Technology</a>
+        </p>
       </footer>
     </div>
   );
-};
+}
 
 export default App;
