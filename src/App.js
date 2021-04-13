@@ -155,7 +155,7 @@ function App() {
 
         {
           // If list array is empty at page load, mount beforeNotice
-          list == "" ? (
+          list.length === 0 ? (
             <p className='notice beforeNotice'>Search a movie to add to the list!</p>
           ) : null
         }
