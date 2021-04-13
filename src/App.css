@@ -61,9 +61,11 @@ form button:focus {
   width: 45%;
 }
 
-.afterNotice {
+.afterNotice,
+.errorPopUp {
   margin-top: 150px;
 }
+
 
 /* -------------------------- */
 /* Plan to Watch List Styling */
@@ -71,4 +73,13 @@ form button:focus {
 
 .toWatchList {
   margin-top: 50px;
+}
+
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1400px;
+  text-align: center;
 }

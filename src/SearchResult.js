@@ -1,4 +1,4 @@
-import "./searchResult.css";
+import './searchResult.css';
 
 function SearchResult(props) {
   return(

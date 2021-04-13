@@ -1,10 +1,9 @@
-import "./errorAlert.css";
 function ErrorAlert() {
-  return (
-    <div className='errorPopUp hide'>
-      <h3>Please Enter A Valid Movie Title</h3>
+  return(
+    <div className="errorPopUp hide">
+      <p className="notice">Please enter a valid movie title.</p>
     </div>
   );
-}
+};
 
 export default ErrorAlert;
