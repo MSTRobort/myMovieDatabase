@@ -40,16 +40,16 @@
 }
 
 .movieCard button {
-  background: none;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.3rem;
-  height: 60px;
-  margin-bottom: 100px;
-  width: 60px;
-  text-align: center;
-  transition-duration: 0.3s;
+    background: none;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 1.3rem;
+    height: 60px;
+    margin: 0 auto 100px auto;
+    width: 60px;
+    transition-duration: 0.3s;
+    text-align: center;
 }
 
 .movieCard button:hover,
