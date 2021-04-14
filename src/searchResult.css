@@ -42,3 +42,46 @@ span.info {
 .poster img {
     border: 5px solid #00AEA4;
 }
+
+/* Media queries */
+
+@media (max-width: 900px){
+    .resultContainer {
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+    .resultContainer ul {
+        padding-left: 20px;
+    }
+
+    .poster img{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .addButton{
+        position:relative;
+        right: 0;
+        top: 0;
+
+    }
+}
+
+@media (max-width: 700px) {
+    .resultContainer{
+        padding: 40px 60px;
+    }  
+}
+
+@media (max-width: 530px) {
+    .resultContainer{
+        padding: 30px 45px;
+
+    }
+
+    .resultContainer ul{
+        padding-left: 10px;
+    }
+
+}

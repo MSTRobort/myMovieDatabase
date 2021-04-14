@@ -23,3 +23,17 @@ footer p {
     margin: 0;
     padding: 2px 0;
 }
+
+/* Media Queries */
+
+@media(max-width: 570px){
+    footer li{
+        padding: 10px;
+    }
+}
+
+@media(max-width: 475px){
+    footer ul{
+        flex-direction: column;
+    }
+}
