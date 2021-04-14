@@ -83,3 +83,33 @@ form button:focus {
   max-width: 1400px;
   text-align: center;
 }
+
+@media(max-width: 900px){
+  .afterNotice,
+.errorPopUp {
+  margin-top: 100px;
+}
+}
+@media(max-width: 700px){
+  .fa-search {
+    display: none;
+  }
+
+  input{
+    width: 72%;
+  }
+}
+
+@media(max-width: 530px) {
+  input{
+    width: 67%;
+  }
+  form button{
+    width: 20%;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+
+}
+
+/* @media(max) */

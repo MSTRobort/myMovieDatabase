@@ -56,3 +56,9 @@
     color: #00AEA4;
     border: 2px solid #00AEA4;
 }
+
+@media(max-width: 883px) {
+    .movieCard button{
+        margin-bottom: 30px;
+    }
+}
