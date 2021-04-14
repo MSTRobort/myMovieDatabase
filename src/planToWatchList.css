@@ -3,56 +3,67 @@
 /* -------------------------- */
 
 .cardInfo {
-    margin: 20px 20px;
-    height: 400px;
+  margin: 20px 20px;
+  height: 400px;
 }
 
 .posterContainer {
-    position: relative;
+  position: relative;
 }
 
 .posterContainer img {
-    display: block;
-    border: 3px solid #00AEA4;
-    width: 250px;
+  display: block;
+  border: 3px solid #00aea4;
+  width: 250px;
 }
 
 .overlay {
-	background: rgba(0,174,164, 0.90);
-    color: #FFF;
-    display: flex;
-    flex-direction: column;
-	height: 100%;
-    justify-content: center;
-	opacity: 0;
-    overflow: hidden;
-	padding: 20px;
-	position: absolute;
-    text-align: center;
-	top: 0;
-    transition-duration: 0.3s;
-	width: 100%;
+  background: rgba(0, 174, 164, 0.9);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  opacity: 0;
+  overflow: hidden;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition-duration: 0.3s;
+  width: 100%;
 }
 
 .overlay:hover,
 .overlay:focus {
-	opacity: 1;
+  opacity: 1;
 }
 
 .movieCard button {
-    background: none;
-    border: 2px solid #FFF;
-    border-radius: 50%;
-    color: #FFF;
-    font-size: 1.3rem;
-    height: 60px;
-    margin-bottom: 100px;
-    width: 60px;
-    transition-duration: 0.3s;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.3rem;
+  height: 60px;
+  margin-bottom: 100px;
+  width: 60px;
+  text-align: center;
+  transition-duration: 0.3s;
 }
 
 .movieCard button:hover,
 .movieCard button:focus {
-    color: #00AEA4;
-    border: 2px solid #00AEA4;
+  color: #00aea4;
+  border: 2px solid #00aea4;
+}
+
+/* -------------------------- */
+/*      Media queries         */
+/* -------------------------- */
+
+@media (max-width: 883px) {
+  .movieCard button {
+    margin-bottom: 30px;
+  }
 }
