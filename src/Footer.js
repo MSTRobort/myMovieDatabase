@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <footer>
-        <p>Created by</p>
+        <p className='footerBold'>Created by</p>
         <ul>
           <li>
             <a href='https://github.com/MackenzieHowey'>
@@ -34,7 +34,7 @@ function Footer() {
             <p>Toria Walker-McHayle</p>
           </li>
         </ul>
-        <p>
+        <p className='footerBold'>
           at <a href='https://junocollege.com/'>Juno College of Technology</a>
         </p>
       </footer>

@@ -120,7 +120,7 @@ function App() {
           <input
             type='text'
             id='userMovie'
-            placeholder='Movie Title ie. "Edward Scissorhands"'
+            placeholder='Movie Title ie. "Titanic"'
             onChange={handleChange}
             value={userInput}
           />

@@ -12,23 +12,23 @@ form {
 }
 
 form i {
-  color: #FFF;
+  color: #fff;
   font-size: 2rem;
   padding: 3px 20px 0 0;
 }
 
 input {
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   border: none;
-  border-bottom: 2px solid #00AEA4;
+  border-bottom: 2px solid #00aea4;
   width: 500px;
   padding: 10px;
 }
 
 form button {
-  background: #00AEA4;
+  background: #00aea4;
   border: none;
-  color: #FFF;
+  color: #fff;
   padding: 0 20px;
   text-transform: uppercase;
   transition-duration: 0.3s;
@@ -36,9 +36,8 @@ form button {
 
 form button:hover,
 form button:focus {
-  background: #00706B;
+  background: #00706b;
 }
-
 
 /* --------------------- */
 /* Search Result Styling */
@@ -54,7 +53,7 @@ form button:focus {
   background: #151515;
   border: 2px solid #000;
   border-radius: 15px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   margin: 100px auto;
   padding: 20px;
@@ -65,7 +64,6 @@ form button:focus {
 .errorPopUp {
   margin-top: 150px;
 }
-
 
 /* -------------------------- */
 /* Plan to Watch List Styling */
@@ -84,32 +82,47 @@ form button:focus {
   text-align: center;
 }
 
-@media(max-width: 900px){
+/* -------------------------- */
+/*      Media queries         */
+/* -------------------------- */
+
+@media (max-width: 900px) {
   .afterNotice,
-.errorPopUp {
-  margin-top: 100px;
+  .errorPopUp {
+    margin-top: 100px;
+  }
 }
+
+@media (max-width: 805px) {
+  .notice {
+    width: 70%;
+  }
 }
-@media(max-width: 700px){
+
+@media (max-width: 700px) {
   .fa-search {
     display: none;
   }
 
-  input{
+  input {
     width: 72%;
   }
 }
 
-@media(max-width: 530px) {
-  input{
+@media (max-width: 530px) {
+  input {
     width: 67%;
+    font-size: 0.8rem;
   }
-  form button{
+  form button {
     width: 20%;
     padding: 0;
     font-size: 0.8rem;
   }
-
 }
 
-/* @media(max) */
+@media (max-width: 365px) {
+  form button {
+    font-size: 0.6rem;
+  }
+}
