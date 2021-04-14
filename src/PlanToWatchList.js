@@ -1,5 +1,3 @@
-import "./planToWatchList.css";
-
 function PlanToWatchList(props) {
   return (
     <>
