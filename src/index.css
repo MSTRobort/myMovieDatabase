@@ -1,7 +1,14 @@
-/* CSS styles start at line 222  */
+/* ----------------------------- */
+/* CSS styles start at line 227  */
+/* ----------------------------- */
+/* My apologies on the formatted */
+/* CSS snippet I don't know how  */
+/*  have prettier not do it :(   */
+/*        Sorry David <3         */
 
-/* setup snippet */
-
+/* --------------------- */
+/*     setup snippet     */
+/* --------------------- */
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -217,9 +224,9 @@ html {
   overflow: hidden;
 }
 
-/* ----------------------------------- */
-
-/* General Styling */
+/* ---------------------- */
+/*    General Styling     */
+/* ---------------------- */
 
 html {
   font-family: "Lexend", sans-serif;
