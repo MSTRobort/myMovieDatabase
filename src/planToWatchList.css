@@ -49,6 +49,11 @@
     margin: 0 auto 100px auto;
     width: 60px;
     transition-duration: 0.3s;
+}
+
+.movieCard i {
+    display: block;
+    margin: 0 auto;
     text-align: center;
 }
 
