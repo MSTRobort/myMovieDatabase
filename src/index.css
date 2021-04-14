@@ -96,3 +96,12 @@ ul {
 .hide {
   display: none;
 }
+
+
+/* Meida Queries */
+
+@media(max-width: 883px) {
+  h2{
+    margin-bottom:40px;
+  }
+}
